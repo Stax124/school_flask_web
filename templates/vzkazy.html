@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{%block title%}Informace
+
+{%endblock%}
+{% block obsah %}
+
+<h1>VZKAZY</h1>
+<h2>Vložit vzkaz</h2>
+<form method="post">
+    <textarea name="vzkaz" cols="80" rows="7"></textarea>
+    <p>
+        <button type="submit">Odeslat</button>
+        <button type="reset">Vymazat</button>
+    </p>
+</form>
+
+<h2>Nástěnka</h2>
+
+{% for login, body, datetime, id in response%}
+    <div class="zprava">
+    <div class="cas">
+        <p><strong>{{login}}</strong></p> 
+        <p>{{d.fromisoformat(datetime).strftime('%d.%_m.%Y %H:%M')}}</p>
+    </div>
+    <div class="telo">
+        <pre style="margin: 0;"> {{body}}</pre>
+    </div>
+    <div class="vymazat">
+    {% if session['user']==login %}
+    
+   
+    <form action="">
+        <input type="hidden" name="id" value="{{id}}">
+        <button type="submit">Vymazat</button>
+    </form>
+    {% endif %}
+    </div>
+    </div>
+{% endfor%}
+
+{% endblock obsah %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{%block title%}Řetízek{%endblock%}
+
+{% block obsah %}
+<h1>Řetízek</h1>
+<h4>Řetízek se skládá z volně pohyblivých a do sebe zavěšených článků (také oček). Bývá zakončen na jednom konci větším kroužkem a na druhém konci závěrem, kterým se dá spolehlivě zapnout. Nejjednodušší řetízek je tvořen kruhovými nebo častěji oválnými kroužky, které jsou navlečeny do sebe, a spára, vzniklá při stáčení článku, je spájena. Články tzv. ručního řetízku mají spáru na užší (obloukovité) straně článku a dva sousední články jsou spájeny k sobě. Tzv. strojní řetízek z drahých kovů se vyrábí z trubičkovitého drátu s pájkou uvnitř, takže na poloze spáry příliš nezáleží a každý článek je volně pohyblivý. Zato bývá strojní řetízek méně pevný.</h4>
+<div style="display: flex; justify-content: center; width: 100%;">
+<img src="{{ url_for('static', filename='retizek.jpg') }}" alt="">
+</div>
+
+
+{% endblock obsah %}

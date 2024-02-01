@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+
+  <title>{%block title%}Moje stránka{%endblock%}</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='logo.png') }}" />
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+{% for category, message in get_flashed_messages(with_categories=True)  %}
+<p class="message {{category}}">{{message}} </p>
+{% endfor %}
+<ul>
+  <p>
+    {% if 'user' in session %}
+    Uživatel: {{session['user']}}.
+    <a href="{{url_for('logout')}}">LOGOUT</a>
+    <a href="{{ url_for('registration') }}">REGISTRACE</a>
+
+
+    {% else %}
+    Nikdo není příhlášen
+    <a href="{{url_for('login')}}">LOGIN</a>
+    <a href="{{ url_for('registration') }}">REGISTRACE</a>
+    {% endif %}
+
+  </p>
+</ul>
+<nav>
+  <p><img src="{{ url_for('static', filename='logo.png') }}" /></p>
+</nav>
+<nav>
+  <ul>
+    <li>
+    <a href="{{ url_for('prsten') }}">Prsten</a> 
+    <a href="{{ url_for('retizek') }}">Řetízek</a>
+    <a href="{{ url_for('naramek') }}">Náramek</a>
+    <a href="{{ url_for('vzkazy') }}">Vzkazy</a>
+
+    
+    </li>
+    
+    
+  </ul>
+  </nav>
+  <ul>
+
+     
+  </ul>
+{% block  obsah%}
+
+{% endblock  %}
+
+</body>
+</html>

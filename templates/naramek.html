@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{%block title%}prsten{%endblock%}
+
+{% block obsah %}
+<h1>Náramek</h1>
+<h4>Náramek je šperk, který se nosí na zápěstí ruky nebo na předloktí paže. Může to být pevný kroužek z kovu, dřeva nebo plastu, ohebný řetízek či pásek, který se navléká nebo kolem zápěstí zapíná. Může mít úlohu pouhé ozdoby, nebo další význam ochranný, magický, náboženský, stavovský, identifikační, záslibný či přátelský. Na magické náramky se často připevňují různé přívěsky a amulety. V moderní době náramky slouží také pro hodinky, sportovní a zdravotní testery nebo zábavní elektroniku, či k příležitostné identifikaci svého nositele.</h4>
+<div style="display: flex; justify-content: center; width: 100%;">
+<img src="{{ url_for('static', filename='22639.jpg') }}" alt="">
+</div>
+{% endblock obsah %}

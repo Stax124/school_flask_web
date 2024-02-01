@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{%block title%}prsten{%endblock%}
+
+{% block obsah %}
+
+<h1>Prsten</h1>
+<h4>Prsten je šperk v podobě malého kroužku navlékaného na prst ruky nebo nohy, podobně jako se náramek navléká na zápěstí a předloktí paže</h4>
+<div style="display: flex; justify-content: center; width: 100%;">
+<img src="{{ url_for('static', filename='prsten.jpg') }}" alt="">
+</div>
+
+{% endblock obsah %}
+

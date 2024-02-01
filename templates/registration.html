@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{%block title%}LOGIN{%endblock%}
+
+{% block obsah %}
+<h1>Registrace</h1>
+
+<form method="POST">
+<div style="width: 100%; display: flex; justify-content: center;">
+<table>
+    <tr>
+        <td>jmeno:</td>
+        <td><input type="text" name="jmeno" placeholder="Zadej jmeno" minlength="5"></td>
+    </tr>
+
+    <tr> 
+        <td>heslo1:</td>
+        <td><p><input type="password" name="heslo1"></p></td>
+    </tr>
+
+    <tr> 
+        <td>heslo2:</td>
+        <td><p><input type="password" name="heslo2"></p></td>
+    </tr>
+    <tr style="text-align: center;">
+
+         <td >
+         <button>Registrovat</button>
+         </td>
+    </tr>
+
+
+</table>
+</div>
+
+</form>
+{% endblock obsah %}
